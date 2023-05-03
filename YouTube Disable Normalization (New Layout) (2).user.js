@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Disable Normalization (New Layout)
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Allows true 100% volume on youtube videos.
 // @author       Wouter Gerarts
 // @match        https://www.youtube.com/*
@@ -66,7 +66,15 @@ var orgVolume = 1;
     var test = setInterval(function() {
         if (buttonAdded){
             var video = baseElement().querySelector('video');
-            if (video.volume != 1 && isEnabled) {
+            var volumeSlider = baseElement().querySelector('.ytp-volume-slider-handle')
+            if (volumeSlider === undefined || volumeSlider === null) {
+                console.log('volumeSlider not found');
+                return;
+            }
+            var volumeSliderLeftStr = volumeSlider.style.left;
+            var volumeSliderLeft = volumeSliderLeftStr.substr(0, volumeSliderLeftStr.length - 2);
+            var volumeSliderValue = parseFloat(volumeSliderLeft) * 2.5;
+            if (video.volume != 1 && isEnabled && volumeSliderValue === 100) {
                 orgVolume = video.volume
                 video.volume = 1;
             }
