@@ -1,6 +1,6 @@
 # disable-Youtube-Normalization
 
-## Install (when already installed Tampermonkey)
+## Install
 ### 1. Install Tampermonkey Extension
 https://www.tampermonkey.net/
 ### 2. Click this link to install the script!!
