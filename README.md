@@ -1,6 +1,9 @@
 # disable-Youtube-Normalization
 
 ## Install (when already installed Tampermonkey)
+### 1. Install Tampermonkey Extension
+https://www.tampermonkey.net/
+### 2. Click this link to install the script!!
 https://github.com/najoan125/disable-Youtube-Normalization/raw/main/YouTube%20Disable%20Normalization%20(New%20Layout)%20(2).user.js
 
 ## Info and Original script
